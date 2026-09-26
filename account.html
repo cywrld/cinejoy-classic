@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Sign in to your Cywrld account.">
+  <title>Account — Cywrld</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="cookie-consent.js" defer></script>
+  <script src="assistant.js" defer></script>
+  <script src="supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="site-auth.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Cywrld home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-toggle-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="movies.html">Movies</a><a href="shows.html">Shows</a><a href="store.html#software">Software</a><a href="store.html#games">Games</a><a href="store.html#ebooks">Ebooks</a><a href="store.html#apps">Apps</a></nav>
+    
+  </div></header>
+  <main id="main">
+    <section class="page-hero compact-hero account-hero"><div class="page-hero-inner"><p class="eyebrow">Your place in the picture house</p><h1>Sign in.<br><em>Stay in the story.</em></h1><p>Create an account to exchange private messages with the Cywrld team. This account is separate from admin access.</p></div></section>
+    <section class="section section-pad account-layout">
+      <div class="account-card" data-account-card>
+        <div data-account-unconfigured hidden><p class="eyebrow">Setup required</p><h2>Online accounts aren't configured.</h2><p data-account-config-message>Set the public Supabase project URL and anon key to enable account sign-in.</p><a href="SUPABASE_SETUP.md" class="text-link">Read the setup guide <span aria-hidden="true">→</span></a></div>
+        <div data-account-auth hidden>
+          <p class="eyebrow">Supabase Auth</p><h2 data-account-heading>Sign in to your account.</h2>
+          <p class="account-small">New accounts can message the Cywrld team. They do not receive admin access; admin permissions are granted separately by a trusted project owner.</p>
+          <div data-account-email-method hidden>
+            <form class="account-auth-form" data-account-email-form>
+              <label for="account-email">Email address</label><input id="account-email" name="email" type="email" autocomplete="username" required>
+              <label for="account-password">Password</label><input id="account-password" name="password" type="password" minlength="8" autocomplete="current-password" required>
+              <button class="button button-gold" type="submit" data-account-email-submit>Sign in</button>
+              <button class="auth-mode-toggle" type="button" data-account-mode-toggle>Create an account instead</button>
+            </form>
+          </div>
+          <div class="account-google-method" data-account-google-method hidden>
+            <button class="button button-outline google-auth-button" type="button" data-account-google><span class="google-g-mark" aria-hidden="true">G</span> Continue with Google</button>
+            <p class="field-help">Google sign-in is shown only when enabled in this site's configuration. The provider and redirect URL must also be configured in Supabase.</p>
+          </div>
+          <p class="admin-status" data-account-auth-status role="status" aria-live="polite"></p>
+          <p class="auth-provider-note" data-account-provider-note></p>
+        </div>
+        <div data-account-signed-in hidden>
+          <p class="eyebrow">You're signed in</p><h2>Welcome back.</h2><p class="account-signed-email" data-account-email-address></p>
+          <a class="button button-gold" href="messages.html">Open your messages <span aria-hidden="true">→</span></a>
+          <button class="button button-outline" type="button" data-account-signout>Sign out</button>
+        </div>
+      </div>
+      <aside class="account-note"><span aria-hidden="true">✦</span><h2>Private threads,<br>right here.</h2><p>Your support messages and replies are stored in the configured Supabase project and visible only to you and authorized Cywrld administrators. No email notifications are sent by default.</p><p>Use a unique password. Never send payment details or other highly sensitive information through this demo site.</p></aside>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-main"><a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a><p>For the love of the moving picture.</p><nav aria-label="Footer navigation"><a href="movies.html">Films</a><a href="store.html">Store</a><a href="purchases.html">My downloads</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="#" data-cookie-preferences>Cookie preferences</a></nav></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> Cywrld</span><span>Message delivery and email notifications depend on Supabase configuration.</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+[functions.notify-contact]
+verify_jwt = true
+
+[functions.create-checkout]
+verify_jwt = true
+
+[functions.get-product-download]
+verify_jwt = true
+
+[functions.stripe-webhook]
+verify_jwt = false

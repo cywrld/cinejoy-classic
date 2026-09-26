@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#334f5b"/><stop offset=".6" stop-color="#a6a18a"/><stop offset="1" stop-color="#e2b96f"/></linearGradient></defs>
+  <rect width="600" height="900" fill="url(#bg)"/><circle cx="470" cy="156" r="66" fill="#f5dda5"/>
+  <g fill="#31434a"><path d="M36 630V330h116v300zM165 630V250h119v380zM300 630V365h102v265zM413 630V220h151v410z"/></g>
+  <g stroke="#dfbb77" stroke-width="8"><path d="M65 389h58M65 449h58M65 509h58M195 316h57M195 376h57M195 436h57M443 291h88M443 351h88M443 411h88M443 471h88"/></g>
+  <path d="M0 631h600v269H0z" fill="#17262c"/>
+  <path d="M0 678h600M0 727h600M0 776h600M0 825h600" stroke="#7d6650" stroke-width="4"/>
+  <g fill="#e6c279"><circle cx="303" cy="530" r="18"/><path d="M288 548h31l13 70h-58zM291 563l-55 24 5 10 56-16M317 562l42-42 9 10-37 49M293 617l-23 72h12l31-66M319 617l29 66h12l-19-74"/></g>
+  <text x="300" y="760" text-anchor="middle" fill="#f3e5c6" font-family="Georgia,serif" font-size="49" letter-spacing="4">SAFETY LAST!</text>
+  <text x="300" y="813" text-anchor="middle" fill="#e8c27d" font-family="Arial,sans-serif" font-size="14" letter-spacing="7">A HIGH-RISE COMEDY</text>
+  <rect x="19" y="19" width="562" height="862" fill="none" stroke="#edc77a" stroke-width="2"/>
+</svg>

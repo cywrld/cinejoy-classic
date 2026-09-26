@@ -1,0 +1,78 @@
+[
+  {
+    "id": "metropolis",
+    "title": "Metropolis",
+    "year": 1927,
+    "director": "Fritz Lang",
+    "country": "Germany",
+    "runtime": "2h 33m",
+    "genres": ["Science fiction", "Drama"],
+    "tagline": "Between the hands and the head, the heart must be the mediator.",
+    "synopsis": "In a dazzling city divided between its planners above and workers below, Freder discovers the human cost of progress—and a voice calling for understanding.",
+    "poster": "assets/posters/metropolis.svg",
+    "videoFile": "videos/metropolis.mp4",
+    "featured": true
+  },
+  {
+    "id": "the-general",
+    "title": "The General",
+    "year": 1926,
+    "director": "Buster Keaton, Clyde Bruckman",
+    "country": "United States",
+    "runtime": "1h 18m",
+    "genres": ["Comedy", "Adventure"],
+    "tagline": "A locomotive, a daring chase, and a very determined engineer.",
+    "synopsis": "When a beloved locomotive is stolen, engineer Johnnie Gray sets off on a breathless chase full of invention, precision, and wonderfully deadpan mishaps.",
+    "poster": "assets/posters/the-general.svg"
+  },
+  {
+    "id": "sherlock-jr",
+    "title": "Sherlock Jr.",
+    "year": 1924,
+    "director": "Buster Keaton",
+    "country": "United States",
+    "runtime": "45 min",
+    "genres": ["Comedy", "Fantasy"],
+    "tagline": "A projectionist dreams himself into the picture.",
+    "synopsis": "A movie-loving projectionist, wrongly accused and sound asleep, steps into a film-within-a-film where reality changes with every cut.",
+    "poster": "assets/posters/sherlock-jr.svg",
+    "featured": true
+  },
+  {
+    "id": "safety-last",
+    "title": "Safety Last!",
+    "year": 1923,
+    "director": "Fred C. Newmeyer, Sam Taylor",
+    "country": "United States",
+    "runtime": "1h 13m",
+    "genres": ["Comedy", "Romance"],
+    "tagline": "The clock is ticking—and the city is very, very tall.",
+    "synopsis": "A young man in the big city tries to make good on a promise to his sweetheart, building toward one of silent comedy's most vertiginous set pieces.",
+    "poster": "assets/posters/safety-last.svg"
+  },
+  {
+    "id": "the-cabinet-of-dr-caligari",
+    "title": "The Cabinet of Dr. Caligari",
+    "year": 1920,
+    "director": "Robert Wiene",
+    "country": "Germany",
+    "runtime": "1h 16m",
+    "genres": ["Horror", "Mystery"],
+    "tagline": "A shadowy fairground. A somnambulist. A story that tilts.",
+    "synopsis": "In a town unsettled by strange crimes, a storyteller recalls the sinister Dr. Caligari and his sleepwalking companion Cesare amid painted streets and uneasy angles.",
+    "poster": "assets/posters/caligari.svg",
+    "featured": true
+  },
+  {
+    "id": "a-trip-to-the-moon",
+    "title": "A Trip to the Moon",
+    "year": 1902,
+    "director": "Georges Méliès",
+    "country": "France",
+    "runtime": "14 min",
+    "genres": ["Fantasy", "Adventure"],
+    "tagline": "One enormous leap into the unknown.",
+    "synopsis": "A band of astronomers builds a capsule, takes aim at the moon, and discovers a strange new world in this playful, imaginative voyage.",
+    "poster": "assets/posters/trip-to-moon.svg"
+  }
+]

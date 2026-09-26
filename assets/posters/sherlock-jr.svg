@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#142c37"/><stop offset="1" stop-color="#0b161d"/></linearGradient></defs>
+  <rect width="600" height="900" fill="url(#bg)"/><circle cx="300" cy="388" r="218" fill="#d69d58"/>
+  <circle cx="300" cy="388" r="179" fill="#1d333a"/><path d="M110 338h380v250H110z" fill="#e2bd78" opacity=".9"/>
+  <path d="M142 363h316v203H142z" fill="#243a40"/><path d="M151 371h298v187H151z" fill="#152932"/>
+  <g fill="#f2d08a"><path d="M190 500c14-71 55-102 110-102s96 31 110 102z"/><circle cx="300" cy="384" r="37"/><path d="M231 441l69-49 69 49-17 28-52-33-52 33z"/></g>
+  <path d="M217 450 157 426M383 450l60-24" stroke="#f2d08a" stroke-width="15"/>
+  <text x="300" y="759" text-anchor="middle" fill="#f4e4c1" font-family="Georgia,serif" font-size="64" letter-spacing="5">SHERLOCK</text>
+  <text x="300" y="820" text-anchor="middle" fill="#e6bd78" font-family="Georgia,serif" font-size="48" font-style="italic" letter-spacing="7">JR.</text>
+  <text x="300" y="856" text-anchor="middle" fill="#9aa9a5" font-family="Arial,sans-serif" font-size="13" letter-spacing="6">DREAMS IN MOTION</text>
+  <rect x="19" y="19" width="562" height="862" fill="none" stroke="#e0b873" stroke-width="2"/>
+</svg>

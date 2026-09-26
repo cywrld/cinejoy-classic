@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#263d4b"/><stop offset=".67" stop-color="#d48d55"/><stop offset="1" stop-color="#f1c879"/></linearGradient></defs>
+  <rect width="600" height="900" fill="url(#sky)"/><circle cx="443" cy="179" r="69" fill="#f5dc9f" opacity=".85"/>
+  <path d="M0 574 125 430l102 120 106-213 126 237 78-96 63 96v326H0z" fill="#27353b"/>
+  <path d="M0 683h600v217H0z" fill="#202525"/><path d="M0 755h600M0 801h600" stroke="#b77b4c" stroke-width="6"/>
+  <g fill="#161b1d"><rect x="100" y="575" width="330" height="112" rx="10"/><rect x="326" y="521" width="120" height="132"/><rect x="350" y="477" width="57" height="48"/><path d="M446 563h68l-20 50h-52z"/><circle cx="164" cy="703" r="40"/><circle cx="364" cy="703" r="40"/></g>
+  <g fill="#e5bb70"><circle cx="164" cy="703" r="18"/><circle cx="364" cy="703" r="18"/><path d="M64 557h72v14H64zM353 493h51v7h-51z"/></g>
+  <text x="300" y="815" text-anchor="middle" fill="#f8e5bd" font-family="Georgia,serif" font-size="64" letter-spacing="8">THE GENERAL</text>
+  <text x="300" y="853" text-anchor="middle" fill="#e9bd71" font-family="Arial,sans-serif" font-size="14" letter-spacing="7">A GREAT CHASE</text>
+  <rect x="19" y="19" width="562" height="862" fill="none" stroke="#edc77a" stroke-width="2"/>
+</svg>

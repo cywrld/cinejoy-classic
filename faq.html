@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10100f">
+  <meta name="description" content="Answers to common questions about Cywrld.">
+  <title>FAQ — Cywrld</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="cookie-consent.js" defer></script>
+  <script src="assistant.js" defer></script>
+  <script src="supabase-config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Cywrld home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-toggle-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="movies.html">Movies</a><a href="shows.html">Shows</a><a href="store.html#software">Software</a><a href="store.html#games">Games</a><a href="store.html#ebooks">Ebooks</a><a href="store.html#apps">Apps</a></nav>
+    
+  </div></header>
+  <main id="main">
+    <section class="page-hero compact-hero faq-hero"><div class="page-hero-inner"><p class="eyebrow">A few notes before the show</p><h1>Good questions.<br><em>Clear answers.</em></h1><p>Everything you need to know about how this little film guide works.</p></div></section>
+    <section class="section section-pad faq-list">
+      <details><summary>Can I watch films on Cywrld?</summary><p>No. This is a catalog and discovery guide, not a streaming service. The Metropolis detail page includes a local player that looks for a file you provide at <code>videos/metropolis.mp4</code>; no film is included or downloaded.</p></details>
+      <details><summary>Is the film collection public domain?</summary><p>We do not make blanket claims about film rights. Rights can vary by country, restoration, soundtrack, edition, and source. Please verify the status and terms for the specific copy you plan to view.</p></details>
+      <details><summary>How does my watchlist work?</summary><p>Saved films are stored in your browser's local storage on this device. There is no account or server sync. Clearing browser data or switching devices may remove or hide your saved list.</p></details>
+      <details><summary>How do private messages and replies work?</summary><p>When Supabase is configured, sign in or create an account, then use Contact or Messages. Your thread is visible to you and authorized Cywrld administrators only; replies stay in the website inbox. Owner email alerts are optional and off until the server-side provider is configured. Admin replies are not sent by email.</p></details>
+      <details><summary>Are ratings and reviews available?</summary><p>They are stored in Supabase when the site is configured. Reading ratings is public; submitting one requires a signed-in account, and each account may rate a film once. Admins can moderate them.</p></details>
+      <details><summary>Can I buy products from the digital store?</summary><p>The store currently shows preview listings and checkout is disabled. Live sales need Stripe and Supabase configuration, a one-time Stripe price verified by the server, and a valid signed webhook before a download entitlement is granted. Only original or properly licensed products should be listed.</p></details>
+      <details><summary>Is the admin page hidden for security?</summary><p>The admin page is a separate route at <code>admin.html</code>; not linking it publicly is only a navigation choice, not a security boundary. Supabase Auth and row-level security enforce administrator access.</p></details>
+      <details><summary>Does this site use tracking cookies?</summary><p>No analytics or marketing cookies or tracking scripts are active. The watchlist, account session, and cookie preference use browser local storage. You can reopen your choice from the Cookie preferences link in the footer.</p></details>
+      <details><summary>Why aren't the film details loading?</summary><p>The site always includes bundled sample films in <code>movies.json</code>, and can use a shared Supabase catalog when configured. Browsers commonly block local file requests when an HTML file is opened directly. Serve this folder over a local static HTTP server; no build step is needed.</p></details>
+    </section>
+    <section class="rights-note"><span aria-hidden="true">✦</span><p>Still have a question? <a href="contact.html">Start a private message</a>—online messaging requires a configured Supabase project and a signed-in account.</p></section>
+  </main>
+  <footer class="site-footer"><div class="footer-main"><a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a><p>For the love of the moving picture.</p><nav aria-label="Footer navigation"><a href="movies.html">Films</a><a href="store.html">Store</a><a href="purchases.html">My downloads</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="#" data-cookie-preferences>Cookie preferences</a></nav></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> Cywrld</span><span>Film availability and rights vary by copy and location. Please verify before viewing.</span></div></footer>
+</body>
+</html>

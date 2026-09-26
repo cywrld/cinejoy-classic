@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#17232b"/><stop offset="1" stop-color="#090d12"/></linearGradient><linearGradient id="sun" x2="0" y2="1"><stop stop-color="#f2cb78"/><stop offset="1" stop-color="#c26a39"/></linearGradient></defs>
+  <rect width="600" height="900" fill="url(#bg)"/><circle cx="301" cy="352" r="185" fill="url(#sun)" opacity=".88"/>
+  <g fill="#12181d"><path d="M36 900V405h66v-94h43v94h47V247h62v653zM246 900V177h39V86h50v91h40v-69h54v69h39v723zM431 900V340h55v-92h39v92h43v560z"/></g>
+  <g fill="none" stroke="#eac36e" stroke-width="8" opacity=".8"><path d="M300 85v100M280 111h40M298 185l-63 600M304 185l71 600"/></g>
+  <path d="M0 707h600M0 735h600M0 763h600M0 791h600" stroke="#cf7546" stroke-width="4" opacity=".62"/>
+  <text x="300" y="818" text-anchor="middle" fill="#f5e4b6" font-family="Georgia,serif" font-size="53" letter-spacing="7">METROPOLIS</text>
+  <text x="300" y="858" text-anchor="middle" fill="#d6aa60" font-family="Arial,sans-serif" font-size="15" letter-spacing="7">A CITY OF TOMORROW</text>
+  <rect x="19" y="19" width="562" height="862" fill="none" stroke="#deb76c" stroke-width="2" opacity=".65"/>
+</svg>

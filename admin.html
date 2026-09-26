@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10100f">
+  <meta name="description" content="Supabase-backed Cywrld catalog administration.">
+  <title>Admin — Cywrld</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="cookie-consent.js" defer></script>
+  <script src="supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="admin.js" defer></script>
+  <script src="store-admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Cywrld home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a>
+    <nav class="admin-top-nav" aria-label="Admin navigation"><a href="index.html">View website <span aria-hidden="true">↗</span></a><span class="admin-mode">ADMIN</span></nav>
+  </div></header>
+  <main id="main" class="admin-main">
+    <section class="admin-heading"><div><p class="eyebrow">The projection booth</p><h1>Good evening,<br><em>administrator.</em></h1><p>Manage the shared program and site inbox.</p></div><span class="admin-stamp" aria-hidden="true">C<br><small>CC</small></span></section>
+    <section class="admin-setup-card" data-admin-setup hidden aria-labelledby="setup-title">
+      <p class="eyebrow">One-time setup needed</p><h2 id="setup-title">Connect your Supabase project.</h2>
+      <p>This admin uses Supabase Auth, Postgres, and Storage. It is not using local browser-only authentication or catalog persistence.</p>
+      <ol><li>Follow <a href="SUPABASE_SETUP.md">the Supabase setup guide</a> to create the tables, policies, storage bucket, and first admin account.</li><li>Set your project's URL and public anon key in <code>supabase-config.js</code>.</li><li>Host this folder over HTTPS. Never place a service-role key in any browser file.</li></ol>
+      <p class="setup-status" data-admin-setup-status role="status"></p>
+    </section>
+    <section class="admin-auth-card" data-admin-auth hidden aria-labelledby="auth-title">
+      <p class="eyebrow">Private administrator access</p><h2 id="auth-title">Sign in to the booth.</h2>
+      <p>Authentication is handled by Supabase. New accounts do not receive admin permissions; an authorized owner must grant the trusted app-metadata role.</p>
+      <div class="admin-login-method" data-provider-email hidden>
+        <form class="admin-login-form" data-admin-login>
+          <label for="admin-email">Email address</label><input id="admin-email" name="email" type="email" autocomplete="username" required>
+          <label for="admin-password">Password</label><input id="admin-password" name="password" type="password" autocomplete="current-password" minlength="8" required>
+          <button class="button button-gold" type="submit" data-email-submit>Sign in <span aria-hidden="true">→</span></button>
+          <button class="auth-mode-toggle" type="button" data-auth-mode-toggle>Create an account instead</button>
+        </form>
+      </div>
+      <div class="admin-login-method google-login-method" data-provider-google hidden>
+        <button class="button button-outline google-auth-button" type="button" data-google-login><span class="google-g-mark" aria-hidden="true">G</span><span data-google-button-label>Continue with Google</span></button>
+        <p class="field-help">Google sign-in appears only when explicitly enabled in supabase-config.js. Configure the Google OAuth provider and redirect URLs in Supabase first.</p>
+      </div>
+      <p class="admin-status" data-admin-login-status role="status" aria-live="polite"></p>
+      <p class="auth-provider-note" data-auth-provider-note></p>
+    </section>
+    <section class="admin-denied-card" data-admin-denied hidden aria-live="polite">
+      <p class="eyebrow">Access not granted</p><h2>This account is not an administrator.</h2>
+      <p>Supabase Auth accepted the sign-in, but the account is missing the required <code>app_metadata.cinejoy_admin = true</code> role. Database policies still enforce access independently.</p>
+      <button class="button button-outline" type="button" data-admin-signout>Sign out</button>
+    </section>
+    <section class="admin-panel" data-admin-panel hidden>
+      <div class="admin-panel-top"><div><p class="eyebrow">Authenticated as <span data-admin-email></span></p><h2>Your shared picture house.</h2></div><button class="button button-outline button-small" type="button" data-admin-signout>Sign out</button></div>
+      <p class="admin-security-note">Catalog updates and inbox access are enforced by Supabase row-level security, not this interface. Public visitors can read the film catalog but cannot change it.</p>
+      <section class="admin-metrics" aria-label="Catalog overview">
+        <article><span>IN THE COLLECTION</span><strong data-metric-total>—</strong><small>titles</small></article>
+        <article><span>FEATURED</span><strong data-metric-featured>—</strong><small>on the home page</small></article>
+        <article><span>PUBLIC-DOMAIN FLAG</span><strong data-metric-public-domain>—</strong><small>editorial flag only</small></article>
+        <article><span>INBOX</span><strong data-metric-messages>—</strong><small>shared messages</small></article>
+      </section>
+      <section class="admin-workspace" aria-labelledby="admin-catalog-title">
+        <div class="admin-section-heading"><div><p class="eyebrow">The program</p><h2 id="admin-catalog-title">Movie catalog</h2></div><div class="admin-toolbar-actions"><button class="button button-outline button-small" type="button" data-refresh-admin>Refresh</button><button class="button button-outline button-small" type="button" data-import-samples>Import bundled films</button></div></div>
+        <p class="admin-status" data-admin-catalog-status role="status" aria-live="polite"></p>
+        <form class="admin-catalog-tools" data-admin-search-form role="search"><label class="search-field"><span class="visually-hidden">Search catalog</span><span aria-hidden="true">⌕</span><input type="search" placeholder="Search titles…" data-admin-search></label><label><span class="visually-hidden">Filter catalog</span><select data-admin-filter><option value="all">All films</option><option value="featured">Featured</option><option value="public-domain">Public-domain flag</option></select></label><button class="button button-gold button-small" type="submit">Search</button></form>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th scope="col">Film</th><th scope="col">Year</th><th scope="col">Genres</th><th scope="col">Flags</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr></thead><tbody data-admin-catalog><tr><td colspan="5">Sign in to load the shared catalog.</td></tr></tbody></table></div>
+      </section>
+      <section class="admin-store-section" data-store-admin aria-labelledby="store-admin-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">Original digital goods</p><h2 id="store-admin-heading">Store catalog</h2></div><button class="button button-outline button-small" type="button" data-new-store-product>New product</button></div>
+        <p class="admin-status" data-store-admin-status role="status" aria-live="polite">Store management requires an authenticated Cywrld administrator and the digital-product schema.</p>
+        <div class="store-admin-layout">
+          <div class="store-admin-list" data-store-admin-list aria-label="Digital products"></div>
+          <form class="admin-form store-admin-form" data-store-product-form>
+            <div class="admin-section-heading"><div><p class="eyebrow">Shared product metadata</p><h3 data-store-product-title>Add a digital product</h3></div></div>
+            <input name="productId" type="hidden">
+            <div class="admin-form-grid">
+              <label>Product slug <span class="field-help">lowercase letters, numbers, hyphens</span><input name="slug" type="text" pattern="[a-z0-9-]{3,80}" maxlength="80" required></label>
+              <label>Product name<input name="name" type="text" minlength="3" maxlength="120" required></label>
+              <label>Category<select name="category" required><option value="software">Software</option><option value="apps">Apps</option><option value="games">Games</option><option value="ebooks">Ebooks</option></select></label>
+              <label>Price in USD<input name="price" type="number" min="0.50" max="20000" step="0.01" required></label>
+              <label class="field-span">Description<textarea name="description" minlength="10" maxlength="2000" rows="3" required></textarea></label>
+              <label class="field-span">Stripe one-time Price ID <span class="field-help">Only a price created in the connected Stripe account. Server checks amount and currency.</span><input name="stripePriceId" type="text" pattern="price_[A-Za-z0-9]+" maxlength="100" placeholder="price_…"></label>
+              <label class="field-span">Private delivery file <span class="field-help">Original/licensed ZIP, PDF, or EPUB only; max 100 MB. Files stay in a private bucket and are available after verified payment.</span><input name="file" type="file" accept=".zip,.pdf,.epub,application/zip,application/x-zip-compressed,application/pdf,application/epub+zip"><small data-store-product-file-status>No private delivery file is attached.</small></label>
+              <label class="admin-publish-toggle"><input name="published" type="checkbox"> Publish in the digital store</label>
+            </div>
+            <div class="admin-form-actions"><button class="button button-gold" type="submit" data-save-store-product>Save product</button><button class="button button-outline" type="button" data-new-store-product>Clear</button></div>
+            <p class="form-status">Checkout remains disabled until Stripe secrets, webhook validation, and the site-origin allow-list are configured server-side. The browser never receives Stripe secret keys.</p>
+          </form>
+        </div>
+        <p class="field-help">List only work you own or are explicitly licensed to distribute. Product files are private; an entitlement is written only by the verified Stripe webhook.</p>
+      </section>
+      <section class="admin-editor-section" aria-labelledby="editor-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">Make it part of the show</p><h2 id="editor-heading" data-editor-title>Add a film</h2></div></div>
+        <p class="admin-status" data-admin-form-status role="status" aria-live="polite"></p>
+        <form class="admin-form" data-admin-film-form>
+          <div class="admin-form-grid">
+            <label>Catalog ID <span class="field-help">lowercase letters, numbers, hyphens</span><input name="id" type="text" pattern="[a-z0-9-]+" required maxlength="80" placeholder="my-film"></label>
+            <label>Film title<input name="title" type="text" required maxlength="120" placeholder="Title"></label>
+            <label>Release year<input name="year" type="number" min="1800" max="2100" required></label>
+            <label>Director(s)<input name="director" type="text" required maxlength="180"></label>
+            <label>Country<input name="country" type="text" required maxlength="100"></label>
+            <label>Runtime<input name="runtime" type="text" required maxlength="40" placeholder="1h 30m"></label>
+            <label class="field-span">Genres <span class="field-help">Separate each genre with a comma</span><input name="genres" type="text" required maxlength="160" placeholder="Drama, Fantasy"></label>
+            <label class="field-span">Tagline<input name="tagline" type="text" required maxlength="200"></label>
+            <label class="field-span">Synopsis<textarea name="synopsis" required minlength="10" maxlength="1500" rows="4"></textarea></label>
+            <label class="field-span">Poster path <span class="field-help">Use an assets/ path or upload an image to Supabase Storage (PNG, JPEG, or WebP; 250 KB max).</span><input name="poster" type="text" maxlength="1000" placeholder="assets/posters/my-film.svg"><input class="poster-upload" name="posterUpload" type="file" accept="image/png,image/jpeg,image/webp"><img class="poster-preview" data-poster-preview alt="Selected poster preview" hidden></label>
+            <label class="field-span">Local video path (optional) <span class="field-help">Relative videos/filename path only. This panel does not upload or host film files.</span><input name="videoFile" type="text" pattern="videos/[a-zA-Z0-9._-]+" placeholder="videos/my-film.mp4"></label>
+            <div class="admin-checkboxes field-span">
+              <label><input name="featured" type="checkbox"> Feature on the home page</label>
+              <label><input name="publicDomain" type="checkbox"> Mark as public domain</label>
+              <p>This is an editorial flag, not a legal determination. Verify rights for the specific copy, territory, restoration, and soundtrack.</p>
+            </div>
+          </div>
+          <div class="admin-form-actions"><button class="button button-gold" type="submit" data-save-film>Save to shared catalog</button><button class="button button-outline" type="button" data-cancel-edit hidden>Cancel edit</button></div>
+        </form>
+      </section>
+      <section class="admin-calendar-section" aria-labelledby="calendar-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">The coming program</p><h2 id="calendar-heading">Release calendar</h2><p class="calendar-scope-note">Schedule dates and release notes only. This does not upload or store movie files.</p></div><div class="calendar-month-controls"><button class="button button-outline button-small" type="button" data-calendar-prev aria-label="Previous month">←</button><strong data-calendar-month></strong><button class="button button-outline button-small" type="button" data-calendar-next aria-label="Next month">→</button></div></div>
+        <p class="admin-status" data-admin-calendar-status role="status" aria-live="polite"></p>
+        <div class="release-calendar" data-release-calendar role="grid" aria-label="Movie release schedule"></div>
+        <form class="release-form" data-release-form>
+          <label>Movie<select name="movie_id" data-release-movie required><option value="">Choose a film</option></select></label>
+          <label>Release date<input name="release_date" type="date" required></label>
+          <label>Status<select name="status"><option value="scheduled">Scheduled</option><option value="published">Published</option><option value="cancelled">Cancelled</option></select></label>
+          <label class="release-note-field">Note<textarea name="note" rows="2" maxlength="300" placeholder="Optional release note"></textarea></label>
+          <button class="button button-gold" type="submit">Add calendar date</button>
+        </form>
+      </section>
+      <section class="admin-inbox-section" aria-labelledby="inbox-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">Notes from the lobby</p><h2 id="inbox-heading">Private message threads</h2></div></div>
+        <p class="admin-status" data-admin-inbox-status role="status" aria-live="polite">Messages and replies are stored in Supabase and visible to their thread participant and admins only. Email notifications are separately configured.</p>
+        <div class="admin-inbox-layout">
+          <aside class="admin-thread-list" data-admin-inbox aria-label="Message thread list"></aside>
+          <section class="admin-thread-detail" aria-label="Selected client thread">
+            <div class="admin-thread-empty" data-admin-thread-empty>Select a client thread to read and reply.</div>
+            <div data-admin-thread-view hidden>
+              <div class="admin-thread-meta"><div><p class="eyebrow">Client account</p><h3 data-admin-thread-email></h3><p class="client-id" data-admin-thread-user-id></p><p class="thread-status" data-admin-thread-status></p></div><button class="button button-outline button-small" type="button" data-toggle-thread-status>Close thread</button></div>
+              <div class="thread-transcript" data-admin-transcript aria-live="polite"></div>
+              <form class="thread-reply-form" data-admin-reply-form><label for="admin-reply">Reply in this website thread</label><textarea id="admin-reply" name="body" rows="3" maxlength="2000" required placeholder="Write a reply…"></textarea><button class="button button-gold" type="submit">Post reply</button><p class="form-status">This reply is saved online and visible to the client after sign-in. No email is sent by this action.</p></form>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section class="admin-reviews-section" aria-labelledby="admin-reviews-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">Audience notes</p><h2 id="admin-reviews-heading">Ratings &amp; reviews</h2></div></div>
+        <p class="admin-status" data-admin-reviews-status role="status" aria-live="polite">Public submissions are moderated here. RLS allows only admins to remove a review.</p>
+        <div class="admin-reviews-list" data-admin-reviews></div>
+      </section>
+      <section class="admin-audit-section" aria-labelledby="audit-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">Accountability</p><h2 id="audit-heading">Append-only activity log</h2></div><button class="button button-outline button-small" type="button" data-refresh-audit>Refresh log</button></div>
+        <p class="admin-status" data-admin-audit-status role="status" aria-live="polite">Database triggers record actor, timestamp, action, and changed entity. Admins can read the log but cannot edit it through this panel.</p>
+        <div class="admin-table-wrap"><table class="admin-table audit-table"><thead><tr><th scope="col">When</th><th scope="col">Actor</th><th scope="col">Action</th><th scope="col">Entity</th><th scope="col">Details</th></tr></thead><tbody data-admin-audit><tr><td colspan="5">Loading audit entries…</td></tr></tbody></table></div>
+      </section>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-main"><a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a><p>Supabase Auth · shared database · RLS-protected admin.</p><nav aria-label="Footer navigation"><a href="movies.html">Films</a><a href="store.html">Store</a><a href="faq.html">FAQ</a><a href="index.html">Website</a><a href="#" data-cookie-preferences>Cookie preferences</a></nav></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> Cywrld</span><span>Never expose a Supabase service-role key in browser code.</span></div></footer>
+</body>
+</html>

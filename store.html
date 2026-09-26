@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Original digital tools, apps, games, and ebooks from Cywrld.">
+  <title>Digital Store — Cywrld</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="cookie-consent.js" defer></script>
+  <script src="assistant.js" defer></script>
+  <script src="supabase-config.js"></script>
+  <script src="store.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Cywrld home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-toggle-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="movies.html">Movies</a><a href="shows.html">Shows</a><a href="store.html#software">Software</a><a href="store.html#games">Games</a><a href="store.html#ebooks">Ebooks</a><a href="store.html#apps">Apps</a></nav>
+    
+  </div></header>
+  <main id="main">
+    <section class="page-hero compact-hero store-hero"><div class="page-hero-inner"><p class="eyebrow">The Cywrld digital store</p><h1>Good things,<br><em>made to keep.</em></h1><p>Original software, apps, games, and ebooks inspired by a love of cinema.</p></div></section>
+    <section class="store-section section-pad" aria-labelledby="store-heading">
+      <div class="section-heading"><div><p class="eyebrow">A small, thoughtful catalog</p><h2 id="store-heading">The digital shelf</h2></div><a class="text-link" href="purchases.html">My purchases <span aria-hidden="true">→</span></a></div>
+      <p class="store-status" data-store-status role="status" aria-live="polite">Loading the catalog…</p>
+      <form class="store-search" data-store-search role="search"><label class="search-field"><span class="visually-hidden">Search digital products</span><span aria-hidden="true">⌕</span><input type="search" data-store-query placeholder="Search the digital shelf…"></label><button class="button button-gold button-small" type="submit">Search</button></form>
+      <nav class="store-categories" aria-label="Product categories">
+        <button type="button" data-store-category="all" aria-pressed="true">All</button>
+        <button id="software" type="button" data-store-category="software" aria-pressed="false">Software</button>
+        <button id="games" type="button" data-store-category="games" aria-pressed="false">Games</button>
+        <button id="ebooks" type="button" data-store-category="ebooks" aria-pressed="false">Ebooks</button>
+        <button id="apps" type="button" data-store-category="apps" aria-pressed="false">Apps</button>
+      </nav>
+      <div class="store-grid" data-store-grid><p class="loading-note">Setting out the catalog…</p></div>
+    </section>
+    <section class="store-assurance"><span aria-hidden="true">✦</span><div><p class="eyebrow">A note on buying</p><h2>Only original or properly licensed work.</h2><p>Sample cards are previews, not products for sale. Live checkout remains disabled until the site owner completes Stripe and Supabase setup. Never upload or sell material without the rights to distribute it.</p></div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-main"><a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a><p>Digital goods, thoughtfully made.</p><nav aria-label="Footer navigation"><a href="movies.html">Films</a><a href="store.html">Store</a><a href="purchases.html">My downloads</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="#" data-cookie-preferences>Cookie preferences</a></nav></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> Cywrld</span><span>Checkout is unavailable until secure server-side payment setup is complete.</span></div></footer>
+</body>
+</html>

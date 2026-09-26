@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10100f">
+  <meta name="description" content="Get in touch with Cywrld.">
+  <title>Contact — Cywrld</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="cookie-consent.js" defer></script>
+  <script src="assistant.js" defer></script>
+  <script src="supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="site-auth.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Cywrld home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-toggle-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="movies.html">Movies</a><a href="shows.html">Shows</a><a href="store.html#software">Software</a><a href="store.html#games">Games</a><a href="store.html#ebooks">Ebooks</a><a href="store.html#apps">Apps</a></nav>
+    
+  </div></header>
+  <main id="main">
+    <section class="page-hero compact-hero contact-hero"><div class="page-hero-inner"><p class="eyebrow">The lobby is open</p><h1>We'd love<br><em>to hear from you.</em></h1><p>Have a film suggestion, a question, or a favorite moment to share?</p></div><span class="contact-star" aria-hidden="true">✳</span></section>
+    <section class="section section-pad contact-layout">
+      <div class="contact-aside"><p class="eyebrow">A note to the projection booth</p><h2>Every good<br>conversation<br>starts somewhere.</h2><p>Send a private message to the Cywrld team. Sign in or create an account so you can see replies in your inbox on this site.</p><a href="messages.html" class="text-link">Open your messages <span aria-hidden="true">→</span></a></div>
+      <div class="contact-compose">
+      <p class="contact-auth-status" data-contact-auth role="status" aria-live="polite">Checking message access…</p>
+      <form class="contact-form" data-contact-form hidden>
+        <label for="contact-subject">What's on your mind?</label><select id="contact-subject" name="subject" required><option value="">Choose a topic</option><option value="film">A film suggestion</option><option value="question">A question</option><option value="other">Something else</option></select>
+        <label for="contact-message">Your message</label><textarea id="contact-message" name="message" rows="6" required minlength="10" maxlength="2000" placeholder="Write your note here…"></textarea>
+        <button class="button button-gold" type="submit">Start private thread <span aria-hidden="true">→</span></button>
+        <p class="form-status" data-contact-status role="status" aria-live="polite">Messages and replies stay in your website inbox. The page will confirm whether an optional owner notification was sent.</p>
+      </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-main"><a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a><p>For the love of the moving picture.</p><nav aria-label="Footer navigation"><a href="movies.html">Films</a><a href="store.html">Store</a><a href="purchases.html">My downloads</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="#" data-cookie-preferences>Cookie preferences</a></nav></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> Cywrld</span><span>Film availability and rights vary by copy and location. Please verify before viewing.</span></div></footer>
+</body>
+</html>

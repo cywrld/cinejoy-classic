@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+  <rect width="600" height="900" fill="#17201d"/><path d="M0 0h600v900H0z" fill="#25302a"/>
+  <path d="M0 0 140 0 28 900 0 900zM600 0 455 0 574 900h26z" fill="#121a17"/>
+  <path d="M117 0h365L321 900h-62z" fill="#d9c29a"/><path d="M197 0h206L320 900h-40z" fill="#d18d56"/>
+  <g fill="#18211d"><path d="M36 720 156 245l74 475zM382 729l75-457 111 457z"/><path d="M87 704 147 476l41 228zM426 710l42-222 51 222z"/></g>
+  <path d="M245 590c4-89 27-142 67-142s63 53 67 142z" fill="#17201e"/><ellipse cx="312" cy="392" rx="51" ry="70" fill="#202a26"/>
+  <path d="M264 369q47-99 99 0l-11 15h-77z" fill="#101715"/><path d="M275 392h18M330 392h18" stroke="#edc67d" stroke-width="6"/>
+  <text x="300" y="774" text-anchor="middle" fill="#f1ddaf" font-family="Georgia,serif" font-size="41" letter-spacing="4">CALIGARI</text>
+  <text x="300" y="821" text-anchor="middle" fill="#e0ad63" font-family="Arial,sans-serif" font-size="14" letter-spacing="6">A TALE OF SHADOWS</text>
+  <rect x="19" y="19" width="562" height="862" fill="none" stroke="#d8b879" stroke-width="2"/>
+</svg>

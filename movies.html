@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10100f">
+  <meta name="description" content="Browse the Cywrld film collection. Search, filter, and save films for later.">
+  <title>The Collection — Cywrld</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="cookie-consent.js" defer></script>
+  <script src="assistant.js" defer></script>
+  <script src="supabase-config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Cywrld home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-toggle-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Home</a><a class="active" href="movies.html" aria-current="page">Movies</a><a href="shows.html">Shows</a><a href="store.html#software">Software</a><a href="store.html#games">Games</a><a href="store.html#ebooks">Ebooks</a><a href="store.html#apps">Apps</a></nav>
+    
+  </div></header>
+  <main id="main">
+    <section class="page-hero compact-hero">
+      <div class="page-hero-inner"><p class="eyebrow">The Cywrld picture house</p><h1>All the films.<br><em>All the feeling.</em></h1><p>A small, growing collection of cinema's most curious beginnings and enduring big ideas.</p></div>
+      <span class="page-number" aria-hidden="true">01 / 06</span>
+    </section>
+    <section class="section section-pad catalog-section" aria-labelledby="catalog-heading">
+      <div class="catalog-toolbar">
+        <div><p class="eyebrow">Take your pick</p><h2 id="catalog-heading">The collection <span class="result-count" data-result-count></span></h2></div>
+        <form class="catalog-filters" id="catalog-search" data-catalog-filters role="search">
+          <label class="search-field"><span class="visually-hidden">Search films</span><span aria-hidden="true">⌕</span><input type="search" name="q" placeholder="Search titles, stories…" data-search-input autocomplete="off"></label>
+          <label><span class="visually-hidden">Filter by genre</span><select name="genre" data-genre-filter><option value="">All genres</option></select></label>
+          <label><span class="visually-hidden">Filter by year</span><select name="year" data-year-filter><option value="">Any year</option></select></label>
+          <label><span class="visually-hidden">Sort films</span><select name="sort" data-sort-filter><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
+          <button class="button button-small button-gold" type="submit">Search</button>
+          <button class="button button-small button-outline" type="reset">Clear</button>
+        </form>
+      </div>
+      <p class="status-message" data-catalog-status role="status" aria-live="polite"></p>
+      <div class="movie-grid catalog-grid" data-catalog-grid aria-live="polite"><p class="loading-note">Rewinding the projector…</p></div>
+    </section>
+    <section class="rights-note"><span aria-hidden="true">✦</span><p><strong>A note on viewing:</strong> This is a curated film guide. It does not host or stream movies. Availability and rights can vary by edition and region; check the source of any copy you choose to watch.</p></section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-main"><a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a><p>For the love of the moving picture.</p><nav aria-label="Footer navigation"><a href="movies.html">Movies</a><a href="shows.html">Shows</a><a href="store.html">Digital store</a><a href="purchases.html">My downloads</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="#" data-cookie-preferences>Cookie preferences</a></nav></div>
+    <div class="footer-bottom"><span>© <span data-current-year>2026</span> Cywrld</span><span>Film availability and rights vary by copy and location. Please verify before viewing.</span></div>
+  </footer>
+</body>
+</html>

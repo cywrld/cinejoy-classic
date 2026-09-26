@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Your private message threads with Cywrld.">
+  <title>Messages — Cywrld</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="cookie-consent.js" defer></script>
+  <script src="assistant.js" defer></script>
+  <script src="supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="site-auth.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Cywrld home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-toggle-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="movies.html">Movies</a><a href="shows.html">Shows</a><a href="store.html#software">Software</a><a href="store.html#games">Games</a><a href="store.html#ebooks">Ebooks</a><a href="store.html#apps">Apps</a></nav>
+    
+  </div></header>
+  <main id="main">
+    <section class="page-hero compact-hero messages-hero"><div class="page-hero-inner"><p class="eyebrow">A conversation, kept together</p><h1>Your messages.<br><em>Your own seat.</em></h1><p>Private support threads are visible to you and authorized Cywrld administrators after you sign in.</p></div></section>
+    <section class="section section-pad">
+      <div class="message-access" data-messages-access role="status" aria-live="polite">Connecting to your account…</div>
+      <div class="customer-messages" data-user-messages hidden>
+        <div class="messages-toolbar"><div><p class="eyebrow">Supabase inbox</p><h2>Conversations</h2></div><div><span data-messages-account></span><button class="table-action" type="button" data-site-signout>Sign out</button></div></div>
+        <div class="customer-message-layout">
+          <aside class="thread-list-panel"><div class="thread-list-heading"><h3>Your threads</h3><button class="table-action" type="button" data-show-new-thread>New message</button></div><div class="thread-list" data-user-thread-list></div></aside>
+          <section class="thread-detail-panel" aria-label="Selected conversation">
+            <div data-user-thread-empty class="thread-empty">Choose a thread or start a new message.</div>
+            <div data-user-thread-view hidden>
+              <div class="thread-view-heading"><div><p class="eyebrow">Private conversation</p><h3 data-user-thread-subject></h3></div><span class="thread-status" data-user-thread-status></span></div>
+              <div class="thread-transcript" data-user-transcript aria-live="polite"></div>
+              <form class="thread-reply-form" data-user-reply-form><label for="user-reply">Reply</label><textarea id="user-reply" name="body" rows="3" maxlength="2000" required placeholder="Write a message…"></textarea><button class="button button-gold" type="submit">Send reply</button><p class="form-status">Replies appear in this thread. No email is sent.</p></form>
+            </div>
+            <div data-user-new-thread hidden>
+              <p class="eyebrow">Start a conversation</p><h3>How can we help?</h3>
+              <form class="thread-reply-form" data-user-new-form><label for="new-thread-subject">Topic</label><select id="new-thread-subject" name="subject" required><option value="">Choose a topic</option><option value="film">A film suggestion</option><option value="question">A question</option><option value="other">Something else</option></select><label for="new-thread-body">Message</label><textarea id="new-thread-body" name="body" rows="5" minlength="10" maxlength="2000" required></textarea><button class="button button-gold" type="submit">Send message</button><p class="form-status">Only you and authorized Cywrld administrators can read this thread. No email is sent.</p></form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-main"><a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="1.2"></rect><path d="M26 12.4a11 11 0 1 0 0 15.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path><circle cx="28" cy="20" r="2.2" fill="#36a6a1"></circle></svg><span class="brand-name">Cywrld</span></a><p>For the love of the moving picture.</p><nav aria-label="Footer navigation"><a href="movies.html">Films</a><a href="store.html">Store</a><a href="purchases.html">My downloads</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="#" data-cookie-preferences>Cookie preferences</a></nav></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> Cywrld</span><span>Admin replies appear in your inbox; no client email notifications are sent by this website.</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#182643"/><stop offset="1" stop-color="#35234c"/></linearGradient></defs>
+  <rect width="600" height="900" fill="url(#sky)"/>
+  <g fill="#f6dfa7"><circle cx="88" cy="107" r="3"/><circle cx="467" cy="87" r="4"/><circle cx="525" cy="247" r="3"/><circle cx="116" cy="292" r="4"/><circle cx="442" cy="356" r="3"/><circle cx="67" cy="494" r="3"/><circle cx="514" cy="575" r="4"/></g>
+  <circle cx="302" cy="343" r="183" fill="#d9b66e"/><path d="M146 360q155-65 311 0v176H146z" fill="#bd8e51"/>
+  <path d="M205 280q98-61 194 0l-28 69q-69-42-137 0z" fill="#ae7351"/>
+  <circle cx="244" cy="345" r="13" fill="#292943"/><circle cx="362" cy="345" r="13" fill="#292943"/><path d="M272 407q31 23 62 0" fill="none" stroke="#62404a" stroke-width="8"/>
+  <path d="m300 420 48 93-96 0z" fill="#e6c47b"/><path d="M300 530V760M239 594h122M265 760h70" stroke="#e6c47b" stroke-width="10"/>
+  <g fill="#f4daa1"><circle cx="87" cy="740" r="13"/><circle cx="504" cy="719" r="18"/><circle cx="152" cy="814" r="8"/><circle cx="441" cy="839" r="10"/></g>
+  <text x="300" y="786" text-anchor="middle" fill="#f8e6c3" font-family="Georgia,serif" font-size="43" letter-spacing="4">A TRIP TO</text>
+  <text x="300" y="836" text-anchor="middle" fill="#e6c27a" font-family="Georgia,serif" font-size="43" letter-spacing="7">THE MOON</text>
+  <rect x="19" y="19" width="562" height="862" fill="none" stroke="#e5bf75" stroke-width="2"/>
+</svg>

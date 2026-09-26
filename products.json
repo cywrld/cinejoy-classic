@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "frame-notes",
+    "name": "Frame Notes",
+    "category": "software",
+    "description": "A concept for a quiet, offline-first film research notebook. Original product listing preview; no application file is included.",
+    "preview": true
+  },
+  {
+    "slug": "screening-companion",
+    "name": "Screening Companion",
+    "category": "apps",
+    "description": "A concept for organizing personal watch plans and cinema notes across a season. Original product listing preview; no application file is included.",
+    "preview": true
+  },
+  {
+    "slug": "projection-room",
+    "name": "The Projection Room",
+    "category": "games",
+    "description": "A concept for an original, story-led puzzle about restoring a small neighborhood picture house. Original product listing preview; no game file is included.",
+    "preview": true
+  },
+  {
+    "slug": "silent-screen-notes",
+    "name": "Notes from the Silent Screen",
+    "category": "ebooks",
+    "description": "A proposed original reading guide to visual storytelling in early cinema. Original product listing preview; no ebook file is included.",
+    "preview": true
+  }
+]
